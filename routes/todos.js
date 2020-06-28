@@ -59,7 +59,7 @@ router.put('/:id', auth, async (req, res) => {
   // Build todo object
   const todoFields = {};
   if (title) todoFields.title = title;
-  if (completed) todoFields.completed = completed;
+  todoFields.completed = completed;
 
   try {
     let todo = await Todo.findById(req.params.id);
